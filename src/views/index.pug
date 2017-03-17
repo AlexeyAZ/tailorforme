@@ -1,0 +1,655 @@
+extends templates/layout
+
+block vars
+    - var title = 'Tailor For Me'
+
+block content
+    div.modal-win
+        div.modal-win__container
+            div.modal-win__close
+            p.modal-win__heading.
+                Записаться на снятие мерок
+            form.modal-win__form
+                label.sec9__form-label.modal-win__label
+                    |Дата
+                    input.sec9__form-input.modal-win__input.modal-win__input_date(type="text" name="date" readonly="true")
+                label.sec9__form-label.modal-win__label
+                    |Время
+                    select.sec9__form-input.sec9__form-input_time.modal-win__input(type="" name="time")
+                        option.sec9__form-option.
+                            10:00-11:00
+                        option.sec9__form-option.
+                            11:00-12:00
+                        option.sec9__form-option.
+                            12:00-13:00
+                        option.sec9__form-option.
+                            13:00-14:00
+                        option.sec9__form-option.
+                            14:00-15:00
+                        option.sec9__form-option.
+                            15:00-16:00
+                        option.sec9__form-option.
+                            16:00-17:00
+                        option.sec9__form-option.
+                            17:00-18:00
+                        option.sec9__form-option.
+                            18:00-19:00
+                        option.sec9__form-option.
+                            19:00-20:00
+                label.sec9__form-label.modal-win__label
+                    |Ваше имя
+                    input.sec9__form-input.modal-win__input(type="text" name="name")
+                label.sec9__form-label.modal-win__label
+                    |Телефон
+                    input.sec9__form-input.sec9__form-input_phone.modal-win__input(type="text" name="phone")
+                button.modal-win__form-btn.
+                    Записаться
+
+    div.content
+        section.sec.intro
+            div.video-container
+                video.video(poster="img/intro-bg.jpg" id="bgvid" playsinline autoplay muted loop)
+                    source(src="video/video.webm" type="video/webm")
+            include templates/header
+            div.container.intro__container
+                p.heading.heading_xl.ta-center.color-white.intro__heading.
+                    Индивидуальный пошив по вашим меркам
+                p.title.title_l.ta-center.color-white.
+                    Восхитительно другая одежда
+                div.intro__scroll-btn
+                    img(src="img/svg/icon-mouse.svg", alt="")
+        section.sec.sec2
+            div.container.sec2__container
+                div.row
+                    div.col.col_2
+                        p.heading.heading_l.sec2__heading.
+                            Идеальная<br> посадка<br> на любую<br> фигуру
+                        div.quote.sec2__quote.
+                            Для тех, кто предпочитает<br> настоящий комфорт<br> и индивидуальность
+                        a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                            Заказать индивидуальный пошив
+                    div.col.col_2
+                        div.sec2__gallery-wrap
+                            div.sec2__gallery
+                                div.sec2__gallery-item
+                                    img.sec2__gallery-img(src="img/slide2-gallery-img1.jpg", alt="")
+                                div.sec2__gallery-item
+                                    img.sec2__gallery-img(src="img/slide2-gallery-img2.jpg", alt="")
+                                div.sec2__gallery-item
+                                    img.sec2__gallery-img(src="img/slide2-gallery-img3.jpg", alt="")
+                            div.sec2__gallery-dots-wrap
+                                div.sec2__gallery-dots
+                                div.sec2__gallery-numbers
+                                    div.sec2__gallery-number.sec2__gallery-number-now.
+                                        1
+                                    div.sec2__gallery-number.sec2__gallery-number-all
+        section.sec.sec3
+            div.container.sec3__container
+                p.heading.heading_m.sec3__heading.ta-center.
+                    Начните с выбора итальянских или английских тканей
+                div.quote.sec3__quote.
+                    Шерсть, шёлк, кашемир, натуральный хлопок, лён от ведущих брендов Европы для создания истинной индивидуальности
+                div.row.sec3__row
+                    div.col.col_2
+                        div.sec3__gallery
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/1.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/1 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/2.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/2 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/3.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/3 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/4.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/4 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/5.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/5 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/6.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/6 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/7.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/7 2.png", alt="")
+                            a.sec3__gallery-item.js-modal(href="")
+                                img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/8.png", alt="")
+                                img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/8 2.png", alt="")
+
+                    div.col.col_2
+                        div.sec3__img-container
+                            img.sec3__img(src="img/slide3-img.jpg", alt="")
+        section.sec.sec4
+            div.container.sec4__container
+                p.heading.heading_m.sec4__heading.
+                    Снимите мерки<br> в студии или<br> пригласите<br> портного<br> к себе
+                div.quote.sec4__quote.
+                    Персональный подход к созданию<br> вашего неповторимого стиля
+                a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                    Записаться на снятие мерок
+            div.sec4__img-container
+                img.sec4__img(src="img/slide4-bg.png", alt="")
+        section.sec.sec5
+            div.container.sec5__container
+                div.sec5__switch-panel
+                    a.sec5__switch-panel-item.sec5__switch-panel-item_active(href="" data-clotch="sec5__clotch_suit").
+                        Пиджак
+                    a.sec5__switch-panel-item(href="" data-clotch="sec5__clotch_pants").
+                        Брюки
+                    a.sec5__switch-panel-item(href="" data-clotch="sec5__clotch_shirt").
+                        Сорочка
+                form.sec5__clotch.sec5__clotch_suit.sec5__clotch_active
+                    div.sec5__clotch-options
+                        p.sec5__clotch-options-title.
+                            Стиль
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="styleclassic" value="classic" data-choice="классический пиджак " checked)
+                                label.sec5__clotch-options-label(for="styleclassic").
+                                    classic
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="styleslim" value="slim" data-choice="зауженный пиджак ")
+                                label.sec5__clotch-options-label(for="styleslim").
+                                    slim
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="stylecasual" value="classic" data-choice="пиджак стиля casual ")
+                                label.sec5__clotch-options-label(for="stylecasual").
+                                    casual
+                        p.sec5__clotch-options-title.
+                            Лацкан
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="lapel" id="lapelrect" value="rect" checked data-choice="с прямоугольными лацканами, ")
+                                label.sec5__clotch-options-label(for="lapelrect").
+                                    прямоугольный
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="lapel" id="lapelsharp" value="sharp" data-choice="с заостренными лацканами, ")
+                                label.sec5__clotch-options-label(for="lapelsharp").
+                                    заостренный
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="lapel" id="lapelwrap" value="wrap" data-choice="с шалевыми лацканами, ")
+                                label.sec5__clotch-options-label(for="lapelwrap").
+                                    шалевый
+                        p.sec5__clotch-options-title.
+                            Вид
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="view" id="viewone" value="1" data-choice="однобортный " checked)
+                                label.sec5__clotch-options-label(for="viewone").
+                                    однобортный
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="view" id="viewtwo" value="2" data-choice="двубортный ")
+                                label.sec5__clotch-options-label(for="viewtwo").
+                                    двубортный
+                        p.sec5__clotch-options-title.
+                            Пуговица:
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="button" id="buttonone" value="1" data-choice="одной пуговицей, " checked)
+                                label.sec5__clotch-options-label(for="buttonone").
+                                    одна
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="button" id="buttontwo" value="2" data-choice="двумя пуговицами, ")
+                                label.sec5__clotch-options-label(for="buttontwo").
+                                    две
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="button" id="buttonthree" value="3" data-choice="тремя пуговицами, ")
+                                label.sec5__clotch-options-label(for="buttonthree").
+                                    три
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="button" id="buttonfour" value="4" data-choice="четыремя пуговицами, " disabled)
+                                label.sec5__clotch-options-label(for="buttonfour").
+                                    четыре
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="button" id="buttonsix" value="6" data-choice="шестью пуговицами, " disabled)
+                                label.sec5__clotch-options-label(for="buttonsix").
+                                    шесть
+                        p.sec5__clotch-options-title.
+                            Монограмма на подкладе
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="monogram" id="monogramno" value="0" data-choice="без монограммы " checked)
+                                label.sec5__clotch-options-label(for="monogramno").
+                                    без монограммы
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="monogram" id="monogramyes" value="1" data-choice="с монограммой ")
+                                label.sec5__clotch-options-label(for="monogramyes").
+                                    с монограммой
+                        p.sec5__clotch-options-title.
+                            Карманы пиджака
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="pockets" id="pocketsvalve" value="valve" data-choice="с карманами с клапаном, " checked)
+                                label.sec5__clotch-options-label(for="pocketsvalve").
+                                    с клапаном
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="pockets" id="pocketslotted" value="slotted" data-choice="с карманами прорезными, ")
+                                label.sec5__clotch-options-label(for="pocketslotted").
+                                    прорезные
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="pockets" id="pocketsinvoices" value="invoices" data-choice="с карманами накладными, ")
+                                label.sec5__clotch-options-label(for="pocketsinvoices").
+                                    накладные
+                        p.sec5__clotch-options-title.
+                            Шлицы
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="splines" id="splinesone" value="1" data-choice="с одной шлицей" checked)
+                                label.sec5__clotch-options-label(for="splinesone").
+                                    с одной шлицей
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="splines" id="splinestwo" data-choice="с двумя шлицами" value="2")
+                                label.sec5__clotch-options-label(for="splinestwo").
+                                    двумя
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="splines" id="splinesnull" value="0" data-choice="без шлиц")
+                                label.sec5__clotch-options-label(for="splinesnull").
+                                    без шлиц
+                    div.sec5__clotch-img-container
+                        div.sec5__clotch-img.sec5__clotch-img_left
+                            div.sec5__clotch-img-wrap
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_1
+                                    span.sec5__clotch-img-number.
+                                        1
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Стиль
+                                        p.sec5__clotch-popup-text.
+                                            Выберите силуэт, учитывающий особенностивашей фигуры. Классический крой для мужчин среднего и плотного телосложения, приталенный силуэт для тех, кто хочет подчеркнуть фигуру
+                                        img(src="img/style.jpg", alt="").sec5__clotch-popup-img
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_2
+                                    span.sec5__clotch-img-number.
+                                        2
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Лацкан
+                                        p.sec5__clotch-popup-text.
+                                            Различают заостренный (peak lapel), прямоугольный (notch lapel) и лацкан-шальку (shawl lapel). Последний чаще всего можно увидеть на смокингах
+                                        img(src="img/lapel.jpg", alt="").sec5__clotch-popup-img
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_3
+                                    span.sec5__clotch-img-number.
+                                        3
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Вид
+                                        p.sec5__clotch-popup-text.
+                                            Двубортные и однобортные пиджаки, отличаются количеством рядов пуговиц. У однобортного пиджака один ряд пуговиц, у двубортного их два
+                                        img(src="img/view.jpg", alt="").sec5__clotch-popup-img
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_4
+                                    span.sec5__clotch-img-number.
+                                        4
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Пуговица
+                                        p.sec5__clotch-popup-text.
+                                            Пиджаки могут отличаться и по количеству пуговиц в ряду. Однобортные пиджаки бывают на одной, двух или трех пуговицах. Двубортные на двух, четырех и шести пуговицах
+                                        img(src="img/button.jpg", alt="").sec5__clotch-popup-img
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_5
+                                    span.sec5__clotch-img-number.
+                                        5
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Монограмма на подкладе
+                                        p.sec5__clotch-popup-text.
+                                            Монограмма — ваше имя на персональной этикетке, служащей отличительным знаком изделий, выполненных по индивидуальному заказу
+                                        img(src="img/monogramm.jpg", alt="").sec5__clotch-popup-img
+                                div.sec5__clotch-img-note.sec5__clotch-img-note_6
+                                    span.sec5__clotch-img-number.
+                                        6
+                                    div.sec5__clotch-popup.sec5__clotch-popup_left
+                                        p.sec5__clotch-popup-title.
+                                            Карманы пиджака
+                                        p.sec5__clotch-popup-text.
+                                            Возможны варианты врезных (с клапаном и без) и накладных карманов, более уместных на пиджаках спортивного стиля. 
+                                        img(src="img/pockets.jpg", alt="").sec5__clotch-popup-img
+                                svg.icon.icon-suit--classic
+                                    use(xlink:href="#suit--style_classic-lapel_rect-view_1-button_1-pockets_valve")
+                        div.sec5__clotch-img.sec5__clotch-img_right
+                            div.sec5__clotch-img-note.sec5__clotch-img-note_7
+                                span.sec5__clotch-img-number.
+                                    7
+                                div.sec5__clotch-popup
+                                    p.sec5__clotch-popup-title.
+                                        Шлицы
+                                    p.sec5__clotch-popup-text.
+                                        Шлицы — разрезы внизу на спине пиджака, предназначенные для облегчения движений и доступа к брючным карманам
+                                    img(src="img/slide5-img1.png", alt="").sec5__clotch-popup-img
+                            svg.icon.icon-suit--classic
+                                use(xlink:href="#suit--classic-splines-1")
+                form.sec5__clotch.sec5__clotch_pants
+                    div.sec5__clotch-options
+                        p.sec5__clotch-options-title.
+                            Стиль
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="pstyleclassic" value="classic" data-choice="классические брюки, " checked)
+                                label.sec5__clotch-options-label(for="pstyleclassic").
+                                    classic
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="pstyleslim" value="slim" data-choice="зауженные брюки, ")
+                                label.sec5__clotch-options-label(for="pstyleslim").
+                                    slim
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="style" id="pstylecasual" value="classic" data-choice="брюки стиля casual, ")
+                                label.sec5__clotch-options-label(for="pstylecasual").
+                                    casual
+                        p.sec5__clotch-options-title.
+                            Складки
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="wrinkles" id="wrinklesno" value="0" data-choice="складки без защипов, " checked)
+                                label.sec5__clotch-options-label(for="wrinklesno").
+                                    без защипов
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="wrinkles" id="wrinklesyes" value="1" data-choice="складки с защипами, ")
+                                label.sec5__clotch-options-label(for="wrinklesyes").
+                                    с защипами
+                        p.sec5__clotch-options-title.
+                            Подгиб
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="bend" id="bendno" value="0" data-choice="подгиб без манжет " checked)
+                                label.sec5__clotch-options-label(for="bendno").
+                                    без манжет
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="bend" id="bendyes" value="1" data-choice="подгиб с манжетами ")
+                                label.sec5__clotch-options-label(for="bendyes").
+                                    с манжетами
+                    div.sec5__clotch-img-container.sec5__clotch-img-container_pants
+                        div.sec5__clotch-img.sec5__clotch-img_pants
+                            div.sec5__clotch-img-wrap
+                                //div.sec5__clotch-img-note.sec5__clotch-img-note_pants1
+                                    span.sec5__clotch-img-number.
+                                        1
+                                //div.sec5__clotch-img-note.sec5__clotch-img-note_pants2
+                                    span.sec5__clotch-img-number.
+                                        2
+                                //div.sec5__clotch-img-note.sec5__clotch-img-note_pants3
+                                    span.sec5__clotch-img-number.
+                                        3
+                                svg.icon.icon-suit--classic
+                                    use(xlink:href="#pants--style_classic-wrinkles_0-bend_0")
+                form.sec5__clotch.sec5__clotch_shirt
+                    div.sec5__clotch-options
+                        p.sec5__clotch-options-title.
+                            Стиль
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="sstyle" id="sstyleclassic" value="regular" data-choice="классическую сорочку, " checked)
+                                label.sec5__clotch-options-label(for="sstyleclassic").
+                                    regular
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="sstyle" id="sstyleslim" value="slim" data-choice="зауженную сорочку, ")
+                                label.sec5__clotch-options-label(for="sstyleslim").
+                                    slim
+                        p.sec5__clotch-options-title.
+                            Виды воротника
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="collar" id="collarclassic" value="classic" data-choice="классический воротник, " checked)
+                                label.sec5__clotch-options-label(for="collarclassic").
+                                    классический
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="collar" id="collarstandart" value="standart" data-choice="стандартный воротник, ")
+                                label.sec5__clotch-options-label(for="collarstandart").
+                                    стандартный
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="collar" id="collarstay" value="stay" data-choice="воротник стойка, ")
+                                label.sec5__clotch-options-label(for="collarstay").
+                                    стойка
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="collar" id="collardouble" value="double" data-choice="двойной воротник, ")
+                                label.sec5__clotch-options-label(for="collardouble").
+                                    двойной
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="collar" id="collarround" value="round" data-choice="скругленный воротник, ")
+                                label.sec5__clotch-options-label(for="collarround").
+                                    скругленный
+                        p.sec5__clotch-options-title.
+                            Виды манжет
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="cuff" id="cuffone" value="one" data-choice="манжеты на одну пуговицу, " checked)
+                                label.sec5__clotch-options-label(for="cuffone").
+                                    на одну пуговицу
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="cuff" id="cufftwo" value="two" data-choice="манжеты на две пуговицы, ")
+                                label.sec5__clotch-options-label(for="cufftwo").
+                                    на две пуговицы
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="cuff" id="cuffregulated" value="regulated" data-choice="регулируемая ширина манжеты, ")
+                                label.sec5__clotch-options-label(for="cuffregulated").
+                                    регулируемая ширина
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="cuff" id="cuffsingle" value="one" data-choice="одинарные манжеты, ")
+                                label.sec5__clotch-options-label(for="cuffsingle").
+                                    одинарные
+                        p.sec5__clotch-options-title.
+                            Ваша монограмма
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="smonogram" id="smonogramno" value="no" data-choice="без монограммы, " checked)
+                                label.sec5__clotch-options-label(for="smonogramno").
+                                    без
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="smonogram" id="smonogramcuff" value="cuff" data-choice="монограмма на манжете, ")
+                                label.sec5__clotch-options-label(for="smonogramcuff").
+                                    на манжете
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="smonogram" id="smonogramchest" value="chest" data-choice="монограмма на груди, ")
+                                label.sec5__clotch-options-label(for="smonogramchest").
+                                    на груди
+                        p.sec5__clotch-options-title.
+                            Контрастные петли
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="contrastloops" id="contrastloopsyes" value="1" data-choice="контрастные петли, ")
+                                label.sec5__clotch-options-label(for="contrastloopsyes").
+                                    да
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="contrastloops" id="contrastloopsno" value="0" data-choice="" checked)
+                                label.sec5__clotch-options-label(for="contrastloopsno").
+                                    нет
+                        p.sec5__clotch-options-title.
+                            Контрастный воротник/манжет
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="contrastcollar" id="contrastcollaryes" value="1" data-choice="контрастный воротник, ")
+                                label.sec5__clotch-options-label(for="contrastcollaryes").
+                                    да
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="contrastcollar" id="contrastcollarno" value="0" data-choice="" checked)
+                                label.sec5__clotch-options-label(for="contrastcollarno").
+                                    нет
+                        p.sec5__clotch-options-title.
+                            Перламутровые пуговицы из австралийских раковин:
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="pearlybuttons" id="pearlybuttonsyes" value="1" data-choice="перламутровые пуговицы из австралийских раковин, ")
+                                label.sec5__clotch-options-label(for="pearlybuttonsyes").
+                                    да
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="pearlybuttons" id="pearlybuttonsno" value="0" data-choice="" checked)
+                                label.sec5__clotch-options-label(for="pearlybuttonsno").
+                                    нет
+                        p.sec5__clotch-options-title.
+                            Планка:
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="sbar" id="sbaryes" value="1" data-choice="с планкой, ")
+                                label.sec5__clotch-options-label(for="sbaryes").
+                                    с планкой
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="sbar" id="sbarno" value="0" data-choice="без планки, " checked)
+                                label.sec5__clotch-options-label(for="sbarno").
+                                    без планки
+                        p.sec5__clotch-options-title.
+                            Карманы:
+                        div.sec5__clotch-options-row
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="spockets" id="spocketsno" value="0" data-choice="без кармана " checked)
+                                label.sec5__clotch-options-label(for="spocketsno").
+                                    без кармана
+                            div.sec5__clotch-option
+                                input.sec5__clotch-options-radio(type="radio" name="spockets" id="spocketsyes" value="1" data-choice="с карманом ")
+                                label.sec5__clotch-options-label(for="spocketsyes").
+                                    с карманом
+                    div.sec5__clotch-img-container.sec5__clotch-img-container_shirt
+                        div.sec5__clotch-img.sec5__clotch-img_shirt-left
+                            div.sec5__clotch-img-wrap
+                                div.sec5__clotch-img-accesories
+                                    img.sec5__clotch-img-monogram.sec5__clotch-img-monogram_chest(src="img/svg/shirt-monogram-front.svg", alt="")
+                                    img.sec5__clotch-img-pocket(src="img/svg/shirt-pocket.svg", alt="")
+                                //div.sec5__clotch-img-note.sec5__clotch-img-note_shirt1
+                                    span.sec5__clotch-img-number.
+                                        1
+                                svg.icon.icon-suit--classic
+                                    use(xlink:href="#shirt--style_regular-collar_classic-contrastcollar_0-sbar_0")
+                        div.sec5__clotch-img.sec5__clotch-img_shirt-right
+                            div.sec5__clotch-img-wrap
+                                img.sec5__clotch-img-monogram.sec5__clotch-img-monogram_cuff(src="img/svg/shirt-monogram-front.svg", alt="")
+                                //div.sec5__clotch-img-note.sec5__clotch-img-note_shirt6
+                                    span.sec5__clotch-img-number.
+                                        6
+                                svg.icon.icon-suit--classic
+                                    use(xlink:href="#shirt--style_regular-cuff_one-contrastcollar_0")
+                div.sec5__issue
+                    div.quote.sec5__quote
+                        | Вы выбрали: 
+                        span.sec5__issue-choise
+                    <a class="sec5__issue-btn btn-ellipse btn-ellipse_bg_red js-modal" href="">Заказать пошив</a>
+        section.sec.sec6
+            div.sec6__top
+                div.container.sec6__container
+                    p.sec6__heading.heading.heading_m.ta-center.
+                        Примерьте ваш готовый костюм уже через 35 дней
+                    div.quote.sec6__quote.
+                        Тандем ремесленного мастерства лучших портных мира и современных технологий для максимально быстрого пошива Вашего костюма
+            div.sec6__bottom
+                div.container.sec6__container
+                    div.sec6__content
+                        p.sec6__content-text.title.title_s.color-white.
+                            Индивидуальный пошив происходит<br> под руководством квалифицированных портных
+                        a.sec6__content-btn.btn-ellipse.btn-ellipse_bg_white.js-modal(href="").
+                            Заказать индивидуальный пошив
+            div.container.sec6__img-container
+                img.sec6__img(src="img/slide6-img1.png", alt="")
+        section.sec.sec7
+            div.container.sec7__container
+                div.sec7__col
+                    img.sec7__img(src="img/slide7-img1.jpg", alt="")
+                div.sec7__col.sec7__col_right
+                    p.sec7__heading.heading.heading_xs.
+                        Завершите образ элегантными аксессуарами
+                    p.sec7__title.title.title_s.
+                        Небольшие детали для больших изменений
+                    p.sec7__text.title.title_s.
+                        Наш модельер поможет подобрать вам варианты стилистических решений
+                    a.sec7__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                        Пригласить модельера
+        section.sec.sec8
+            div.sec8__bg
+                div.container.sec8__container
+                    div.sec8__window
+                        p.sec8__window-heading.
+                            Посмотрите, насколько элегантно и стильно выглядят костюмы TAILOR.ME 
+                        p.sec8__title.title.title_s.
+                            В повседневной жизни
+                        a.sec8__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                            Заказать индивидуальный пошив
+                        div.sec8__gallery-info
+                            div.sec8__gallery-position
+                                div.sec8__gallery-position-now.
+                                    1
+                                div.sec8__gallery-position-all
+                            div.sec8__gallery-nav
+                                div.sec8__gallery-nav-btn.sec8__gallery-nav-btn_left
+                                    div.sec8__gallery-nav-btn-icon
+                                div.sec8__gallery-nav-btn.sec8__gallery-nav-btn_right
+                                    div.sec8__gallery-nav-btn-icon
+                div.sec8__bg-item.sec8__bg-item_left
+                
+                div.sec8__bg-item.sec8__bg-item_right
+                    div.sec8__gallery-nav.sec8__gallery-nav_mobile
+                        div.sec8__gallery-nav-btn.sec8__gallery-nav-btn_left
+                            div.sec8__gallery-nav-btn-icon
+                        div.sec8__gallery-nav-btn.sec8__gallery-nav-btn_right
+                            div.sec8__gallery-nav-btn-icon
+                    div.sec8__gallery
+                        div.sec8__gallery-item(style="background-image:url('img/slide8-gallery-img1.jpg');")
+                            img.sec8__gallery-item-img(src="img/slide8-gallery-img1.jpg", alt="")
+                            div.sec8__gallery-item-descr
+                                p.sec8__gallery-title.
+                                    Айдар Исмагилов
+                                p.sec8__gallery-text.
+                                    Владелец сети мастерских шиномонтажа «Пятое колесо» и сети автомоек  «Мойдодыр»
+                                p.sec8__gallery-title.
+                                    Артем Захаров
+                                p.sec8__gallery-text.
+                                    Владелец компании «Франчайзинг 5»
+                        div.sec8__gallery-item(style="background-image:url('img/slide8-gallery-img2.jpg');")
+                            img.sec8__gallery-item-img(src="img/slide8-gallery-img2.jpg", alt="")
+                            div.sec8__gallery-item-descr
+                                p.sec8__gallery-title.
+                                    Марат Багаутдинов
+                                p.sec8__gallery-text.
+                                    Основатель и владелец сети кафе "WOK&GO", коммерческий директор компании "Данафлекс"
+                        div.sec8__gallery-item(style="background-image:url('img/slide8-gallery-img3.jpg');")
+                            img.sec8__gallery-item-img(src="img/slide8-gallery-img3.jpg", alt="")
+                            div.sec8__gallery-item-descr
+                                p.sec8__gallery-title.
+                                    Марат Багаутдинов
+                                p.sec8__gallery-text.
+                                    Основатель и владелец сети кафе "WOK&GO", коммерческий директор компании "Данафлекс"
+                        div.sec8__gallery-item(style="background-image:url('img/slide8-gallery-img4.jpg');")
+                            img.sec8__gallery-item-img(src="img/slide8-gallery-img4.jpg", alt="")
+                            div.sec8__gallery-item-descr
+                                p.sec8__gallery-title.
+                                    Артем Захаров
+                                p.sec8__gallery-text.
+                                    Владелец компании «Франчайзинг 5»
+        section.sec.sec9
+            div.container.sec9__container
+                p.sec9__heading.heading.heading_s.color-white.
+                    Пригласите портного или запишитесь на замер в студию
+                p.sec9__title.title.title_l.color-white.
+                    Выберите дату и удобное для вас время
+                form.sec9__form
+                    div.sec9__form-item.sec9__form-item_date
+                        label.sec9__form-label
+                            |Дата
+                            input.sec9__form-input.sec9__form-input_date(type="text" name="date" readonly="true")
+                        label.sec9__form-label
+                            |Время
+                            select.sec9__form-input.sec9__form-input_time(type="" name="time")
+                                option.sec9__form-option.
+                                    10:00-11:00
+                                option.sec9__form-option.
+                                    11:00-12:00
+                                option.sec9__form-option.
+                                    12:00-13:00
+                                option.sec9__form-option.
+                                    13:00-14:00
+                                option.sec9__form-option.
+                                    14:00-15:00
+                                option.sec9__form-option.
+                                    15:00-16:00
+                                option.sec9__form-option.
+                                    16:00-17:00
+                                option.sec9__form-option.
+                                    17:00-18:00
+                                option.sec9__form-option.
+                                    18:00-19:00
+                                option.sec9__form-option.
+                                    19:00-20:00
+                    div.sec9__form-item.sec9__form-item_info
+                        label.sec9__form-label
+                            |Ваше имя
+                            input.sec9__form-input(type="text" name="name")
+                        label.sec9__form-label
+                            |Телефон
+                            input.sec9__form-input.sec9__form-input_phone(type="text" name="phone")
+                div.sec9__btn-container
+                    button.sec9__btn.
+                        Записаться на снятие мерок

@@ -1,0 +1,82 @@
+.sec4 {
+    background-color: $gray-bg;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+
+    @include media(w768) {
+        padding-bottom: 0;
+    }
+
+    &__container {
+        @include media(w768) {
+            text-align: center;
+        }
+    }
+
+    &__img-container {
+        //background-image: url("../img/slide4-bg.png");
+        background-position: left bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        @include media(w768) {
+            background-image: url("../img/slide4-bg.png");
+            background-position: 100% center;
+            position: static;
+            height: 400px;
+        }
+
+        @media screen and(max-width: 450px) {
+            height: 300px;
+        }
+    }
+
+    &__img {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: auto;
+        width: 100%;
+
+        @include media(w768) {
+            display: none;
+            position: static;
+            //height: 
+        }
+    }
+
+    &__heading {
+        margin-bottom: 40px;
+
+        @include media(w768) {
+            
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__quote {
+        text-align: left;
+        margin-bottom: 70px;
+        max-width: 430px;
+
+        @include media(w768) {
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include media(w600) {
+            text-align: center;
+        }
+    }
+}

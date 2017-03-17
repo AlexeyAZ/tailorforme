@@ -1,0 +1,114 @@
+.sec3 {
+    background-color: $gray-bg;
+    padding: 100px 0;
+
+    @include media(w1024) {
+        padding: 60px 0;
+    }
+
+    &__heading {
+        margin-bottom: 50px;
+
+        @include media(w768) {
+            margin-bottom: 30px;
+        }
+
+        @include media(w600) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__quote {
+        margin: 0 auto;
+        max-width: 720px;
+    }
+
+    &__row {
+        margin-top: 100px;
+
+        @include media(w768) {
+            margin-top: 50px;
+        }
+    }
+
+    &__img-container {
+        padding-left: 50px;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        text-align: center;
+        width: calc(50vw - 10px);
+
+        @include media(w1024) {
+            padding-left: 0;
+            position: static;
+            width: auto;
+        }
+    }
+
+    &__img {
+        display: inline-block;
+        max-width: 824px;
+        width: 100%;
+
+        @include media(w1024) {
+            //width: 100%;
+        }
+    }
+
+    &__gallery {
+        font-size: 0;
+    }
+
+    &__gallery-item {
+        display: inline-block;
+        margin-bottom: 40px;
+        vertical-align: middle;
+        width: 50%;
+
+        &:nth-child(even) {
+            text-align: right;
+            
+            @include media(w1024) {
+                text-align: center;
+            }
+        }
+
+        @include media(w1024) {
+            text-align: center;
+            width: calc(100% / 3);
+        }
+
+        @include media(w768) {
+            margin-bottom: 30px;
+            width: 50%
+        }
+
+        @include media(w600) {
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+
+            .sec3__gallery-img_main {
+                display: none;
+            }
+
+            .sec3__gallery-img_hover {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__gallery-img {
+        display: inline-block;
+
+        @include media(w600) {
+            width: 60%
+        }
+
+        &_hover {
+            display: none;
+        }
+    }
+}

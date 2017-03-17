@@ -1,0 +1,133 @@
+.modal-win {
+  transition: $trans;
+  background-color: rgba(56,56,56,0.8);
+  opacity: 0;
+  overflow: auto;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+	min-width: 320px;
+
+  &_show {
+    
+  }
+
+  &__container {
+	transform: translate(-50%,-40%);
+	background-color: white;
+	border-radius: 10px;
+	padding: 40px 50px 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 380px;
+
+	@include media(w1024) {
+		transform: translate(-50%,0);
+		margin-top: 50px;
+		margin-bottom: 50px;
+		top: 0;
+	}
+
+	@include media(w768) {
+		padding: 30px 20px 40px;
+	}
+
+	@media screen and (max-width:400px) {
+		width: 100%;
+	}
+  }
+
+  &__close {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 10px;
+	  right: 15px;
+	  height: 22px;
+	  width: 22px;
+
+	  &:before,
+	  &:after {
+		  content: "";
+		  background-color: black;
+		  position: absolute;
+		  top: 0;
+		  left: 50%;
+		  height: 100%;
+		  width: 2px;
+	  }
+
+	  &:before {
+		  transform: rotate(45deg);
+	  }
+
+	  &:after {
+		  transform: rotate(-45deg);
+	  }
+  }
+
+  &__heading {
+	  font-family: "Lora", sans-serif;
+	  font-size: 32px;
+	  font-weight: bold;
+	  line-height: 1.2;
+	  text-align: center;
+	  margin-bottom: 30px;
+  }
+
+  &__form {
+  }
+
+  &__label {
+	  color: black;
+  }
+
+  &__input {
+	  border-color: black;
+	  color: black;
+
+	  .jq-selectbox__trigger-arrow {
+		  border-color: black;
+	  }
+
+	  &.opened {
+		  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		  border-color: white;
+
+		  .jq-selectbox__dropdown {
+			  box-shadow: 0 14px 20px rgba(0,0,0,0.1);
+		  }
+	  }
+  }
+
+  &__form-btn {
+	  transition: $trans;
+	  background-color: #d62027;
+	  border-color: transparent;
+	  border-radius: 31px;
+	  cursor: pointer;
+	  color: white;
+	  font-family: "PTSerif", sans-serif;
+	  font-size: 24px;
+	  margin-top: 20px;
+	  height: 62px;
+	  width: 95%;
+
+	  &:hover {
+		background-color: #ee343b;
+	}
+  }
+}
+
+.modal-win-show {
+	overflow: hidden;
+	
+	.modal-win {
+		opacity: 1;
+    	visibility: visible;
+	}
+}

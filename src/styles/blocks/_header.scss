@@ -1,0 +1,62 @@
+.header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+
+    @include media(w1024) {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    &__container {
+        width: 100%;
+        
+        @include media(w768) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+
+        @include media(w600) {
+            flex-direction: column;
+            justify-content: center;
+            width: auto;
+        }
+
+        a {
+            @include media(w600) {
+                display: block;
+            } 
+        }
+    }
+
+    &__logo {
+        transform: translateX(-50%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 232px;
+
+        @include media(w600) {
+            transform: translateX(0);
+            position: static;
+            width: 125px;
+        }
+    }
+
+    &__link {
+        line-height: 1.8;
+    }
+
+    &__logo-img {
+        display: block;
+    }
+}

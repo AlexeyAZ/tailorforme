@@ -1,0 +1,162 @@
+.sec2 {
+    padding: 100px 0 20px;
+
+    @include media(w1024) {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    &__heading {
+        margin-bottom: 60px;
+
+        @include media(w1024) {
+            margin-bottom: 30px;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__quote {
+        margin-bottom: 60px;
+
+        @include media(w1024) {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            max-width: 500px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include media(w600) {
+            text-align: center;
+        }
+    }
+
+    &__gallery-wrap {
+        position: relative;
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__gallery {
+        outline: none;
+    }
+
+    &__gallery-item {
+        outline: none;
+    }
+
+    &__gallery-img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+
+        @include media(w1024) {
+            width: 80%;
+        }
+        
+        @include media(w768) {
+            width: 80%;
+        }
+    }
+
+    &__gallery-dots-wrap {
+        transform: translateX(-50%);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+
+        @include media(w768) {
+            transform: translateX(0);
+            position: static;
+            margin-top: -30px;
+        }
+    }
+
+    &__gallery-dots {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+
+        .slick-dots {
+
+            li {
+                transform: rotate(45deg);
+                cursor: pointer;
+                display: inline-block;
+                margin-right: 16px;
+
+                &.slick-active {
+
+                    button {
+
+                        &:before {
+                            background-color: #b0b0b0;
+                        }
+                    }
+                }
+            }
+
+            button {
+                background-color: white;
+                border: 2px solid #b0b0b0;
+                cursor: pointer;
+                outline: none;
+                font-size: 0;
+                position: relative;
+                height: 22px;
+                width: 22px;
+
+                &:before {
+                    content: "";
+                    transition: $trans;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+        }
+    }
+
+    &__gallery-numbers {
+        color: #b0b0b0;
+        display: inline-block;
+        font-family: "PTSerif", sans-serif;
+        font-style: italic;
+        font-size: 23px;
+        vertical-align: middle;
+    }
+
+    &__gallery-number {
+        position: relative;
+    }
+
+    &__gallery-number-now {
+
+        &:after {
+            content: "";
+            transform: rotate(-45deg);
+            background-color: #b0b0b0;
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            height: 2px;
+            width: 25px;
+        }
+    }
+
+    &__gallery-number-all {
+        top: -10px;
+        right: -16px;
+    }
+}

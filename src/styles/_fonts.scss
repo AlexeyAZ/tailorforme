@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "PTSerif";
+    src: url("../fonts/PTSerif/PTSerif-Regular.eot");
+    src: url("../fonts/PTSerif/PTSerif-Regular.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/PTSerif/PTSerif-Regular.woff2') format('woff2'),
+    url("../fonts/PTSerif/PTSerif-Regular.woff") format("woff"),
+    url("../fonts/PTSerif/PTSerif-Regular.ttf") format("truetype"),
+    url('../fonts/PTSerif/PTSerif-Regular.svg#svgFontName') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "PTSerif";
+    src: url("../fonts/PTSerif/PTSerif-Italic.eot");
+    src: url("../fonts/PTSerif/PTSerif-Italic.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/PTSerif/PTSerif-Italic.woff2') format('woff2'),
+    url("../fonts/PTSerif/PTSerif-Italic.woff") format("woff"),
+    url("../fonts/PTSerif/PTSerif-Italic.ttf") format("truetype"),
+    url('../fonts/PTSerif/PTSerif-Italic.svg#svgFontName') format('svg');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("../fonts/Lora/Lora-Bold.eot");
+    src: url("../fonts/Lora/Lora-Bold.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/Lora/Lora-Bold.woff2') format('woff2'),
+    url("../fonts/Lora/Lora-Bold.woff") format("woff"),
+    url("../fonts/Lora/Lora-Bold.ttf") format("truetype"),
+    url('../fonts/Lora/Lora-Bold.svg#svgFontName') format('svg');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans.eot");
+    src: url("../fonts/OpenSans/OpenSans.eot?#iefix")format("embedded-opentype"),
+    url('../fonts/OpenSans/OpenSans.woff2') format('woff2'),
+    url("../fonts/OpenSans/OpenSans.woff") format("woff"),
+    url("../fonts/OpenSans/OpenSans.ttf") format("truetype"),
+    url('../fonts/OpenSans/OpenSans.svg#svgFontName') format('svg');
+    font-style: normal;
+    font-weight: bold;
+}
+

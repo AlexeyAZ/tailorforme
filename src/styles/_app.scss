@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  position: relative;
+  line-height: 1.5;
+  min-width: 320px;
+}
+a {
+  color: rgba(255,255,255,0.5);
+  display: inline-block;
+  transition: $trans;
+  text-decoration: none;
+
+  &:hover {
+    border-color: white;
+    color: white;
+  }
+}
+
+.sec {
+  background-color: white;
+}
+
+.phone-link {
+
+  &:hover {
+
+    svg {
+      fill: white;
+    }
+    
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  svg {
+    transition: $trans;
+    fill: rgba(255,255,255,0.5);
+    margin-right: 8px;
+    vertical-align: middle;
+    height: 16px;
+    width: 20px;
+  }
+}
+
+.row {
+  font-size: 0;
+}
+
+.col {
+  display: inline-block;
+  position: relative;
+
+  &_2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+
+    @include media (w1024) {
+      width: 100%;
+    }
+  }
+}
+
+.quote {
+  color: #818181;
+  font-family: "PTSerif", sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.2;
+  padding-left: 140px;
+  position: relative;
+
+  &:before {
+    transition: 1.5s ease;
+    content: "";
+    background-color: #818181;
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    height: 1px;
+    width: 0;
+  }
+
+  &_animate {
+
+    &:before {
+      width: 110px;
+    }
+  }
+
+  @include media (w1366) {
+      font-size: 18px;
+  }
+
+  @include media (w768) {
+      font-size: 16px;
+  }
+
+  @include media (w600) {
+    text-align: center;
+    padding-left: 0;
+    
+    &:before {
+      content: none;
+    }
+  }
+}
+
+.btn-ellipse {
+  transition: $trans;
+  border-radius: 36px;
+  font-family: "PTSerif", sans-serif;
+  font-size: 24px;
+  padding: 14px 42px;
+
+  @include media (w1366) {
+      font-size: 18px;
+      padding: 12px 32px;
+  }
+
+  @include media (w600) {
+      font-size: 16px;
+      padding: 10px 16px;
+  }
+
+  &:hover {
+    
+  }
+
+  &_bg_red {
+    background-color: #d62027;
+    display: inline-block;
+    color: white;
+    text-align: center;
+
+    &:hover {
+      background-color: #ee343b;
+    }
+  }
+
+  &_bg_white {
+    background-color: white;
+    display: inline-block;
+    color: #131313;
+    text-align: center;
+
+    &:hover {
+      background-color: #ee343b;
+      color: white;
+    }
+  }
+}
+
+.datepicker__modal {
+  z-index: 201;
+}

@@ -1,0 +1,242 @@
+.sec9 {
+	background-image: url("../img/slide9-bg.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 45px;
+
+	@include media(w1024) {
+		padding-top: 60px;
+	}
+
+	&__container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&__heading {
+		margin-bottom: 70px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&__title {
+		border-top: 3px solid white;
+		border-bottom: 1px solid white;
+		margin-bottom: 50px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		@include media(w768) {
+			margin-bottom: 0;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		@include media(w600) {
+			border-bottom: none;
+		}
+	}
+
+	&__btn-container {
+		border-bottom: 3px solid white;
+		padding-bottom: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&__form {
+		display: flex;
+		text-align: left;
+		margin-bottom: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		@include media(w1024) {
+			flex-direction: column;
+		}
+	}
+
+	&__form-item {
+		display: flex;
+		width: 50%;
+
+		&_date {
+			@include media(w1024) {
+				margin-bottom: 20px;
+			}
+		}
+
+		@include media(w1024) {
+			width: 100%;
+		}
+
+		@include media(w600) {
+			flex-direction: column;
+			margin-bottom: 0;
+		}
+	}
+
+	&__form-label {
+		color: white;
+		font-family: "PTSerif", sans-serif;
+		font-size: 24px;
+		width: 50%;
+
+		@include media(w600) {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+	}
+
+	&__form-input {
+		background-color: transparent;
+		border: 2px solid white;
+		outline: none;
+		border-radius: 31px;
+		display: block;
+		color: white;
+		font-family: "PTSerif", sans-serif;
+		font-size: 24px;
+		margin-top: 10px;
+		padding: 0 20px;
+		height: 62px;
+		width: 95%;
+
+		@include media(w600) {
+			width: 100%;
+		}
+
+		&_time {
+			outline: none;
+			padding: 0;
+
+			.jq-selectbox__select {
+				padding: 0 20px;
+				height: 100%;
+				width: 100%;
+
+				&:before {
+					content: "";
+					display: inline-block;
+					vertical-align: middle;
+					height: 100%;
+				}
+			}
+
+			&.opened {
+				background-color: white;
+				border-radius: 31px 31px 0 0;
+				color: black;
+
+				.jq-selectbox__trigger-arrow {
+					transform: rotate(135deg);
+					border-color: black;
+				}
+
+				&.dropup {
+					border-radius: 0 0 31px 31px;
+
+					.jq-selectbox__dropdown {
+						background-color: white;
+						border-radius: 31px 31px 0 0;
+						padding-top: 30px;
+						padding-bottom: 0;
+
+						
+
+						.sec9__form-option {
+							color: black;
+							padding-left: 20px;
+							padding-right: 20px;
+
+							&:hover {
+								background-color: #d62027;
+								color: white;
+							}
+						}
+					}
+				}
+			}
+
+			.jq-selectbox__select-text {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.jq-selectbox__trigger {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 50px;
+			}
+
+			.jq-selectbox__trigger-arrow {
+				transition: $trans;
+				transform: rotate(-45deg);
+				border-left: 2px solid white;
+				border-bottom: 2px solid white;
+				position: relative;
+				top: -2px;
+				right: 10px;
+				height: 16px;
+				width: 16px;
+			}
+
+			.jq-selectbox__dropdown {
+				background-color: white;
+				border-radius: 0 0 31px 31px;
+				padding-bottom: 30px;
+				left: -2px;
+    			right: -2px;
+
+				
+
+				.sec9__form-option {
+					color: black;
+					padding-left: 20px;
+					padding-right: 20px;
+
+					&:hover {
+						background-color: #d62027;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	&__btn {
+		transition: $trans;
+		background-color: white;
+		border-color: transparent;
+		border-radius: 31px;
+		outline: none;
+		display: inline-block;
+		cursor: pointer;
+		color: black;
+		font-family: "PTSerif", sans-serif;
+		font-size: 24px;
+		line-height: 1.2;
+		padding: 0 30px;
+		height: 62px;
+		width: auto;
+
+		&:hover {
+			background-color: #ee343b;
+			color: white;
+		}
+
+		@include media(w600) {
+			width: 100%;
+		}
+	}
+}

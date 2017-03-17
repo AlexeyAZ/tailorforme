@@ -1,0 +1,102 @@
+.sec6 {
+    overflow: hidden;
+
+    &__top {
+        background-image: url("../img/slide6-bg1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 100px;
+        padding-bottom: 180px;
+
+        @include media(w1024) {
+            padding-top: 50px;
+            padding-bottom: 80px;
+        }
+
+        @include media(w768) {
+            padding-top: 40px;
+            padding-bottom: 50px;
+        }
+    }
+
+    &__bottom {
+        background-image: url("../img/slide6-bg2.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 85px;
+
+        @include media(w1024) {
+            padding-top: 40px;
+        }
+    }
+
+    &__img-container {
+        position: relative;
+        z-index: 0;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__heading {
+        margin-bottom: 30px;
+    }
+
+    &__quote {
+        margin: 0 auto;
+        max-width: 60%;
+
+        @include media(w768) {
+            max-width: none;
+        }
+    }
+
+    &__content {
+        background-image: url("../img/slide6-dummy.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 10px bottom;
+        padding-left: 130px;
+
+        @media screen and (max-width: 500px) {
+            background-image: none;
+            text-align: center;
+            padding-left: 0;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: -10%;
+        width: 50%;
+
+        @include media(w1024) {
+            width: 40%;
+        }
+
+        @include media(w768) {
+            display: none;
+        }
+    }
+
+    &__content-text {
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__content-btn {
+        margin-bottom: 85px;
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 60px;
+        }
+    }
+}
