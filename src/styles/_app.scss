@@ -167,3 +167,7 @@ a {
 .datepicker__modal {
   z-index: 201;
 }
+
+.wl-modal-open.wl-modal-open {
+  display: none !important;
+}

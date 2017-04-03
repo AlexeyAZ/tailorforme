@@ -1,7 +1,12 @@
 .footer {
 	background-color: #101010;
-	padding-top: 40px;
-	padding-bottom: 56px;
+	padding-top: 25px;
+	padding-bottom: 30px;
+
+	@include media(w768) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 
 	&__container {
 		color: #7a7a7a;

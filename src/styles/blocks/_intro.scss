@@ -18,6 +18,7 @@
     }
 
     &__container {
+        text-align: center;
         height: 100%;
     }
 
@@ -38,11 +39,24 @@
 
         @include media(w1024) {
             margin-top: 100px;
+            margin-bottom: 20px;
         }
 
         @include media(w600) {
             margin-top: 50px;
         }
+    }
+
+    &__title {
+        margin-bottom: 3%;
+
+        @include media(w1024) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__btn {
+        
     }
 }
 

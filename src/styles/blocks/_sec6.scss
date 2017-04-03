@@ -6,8 +6,8 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        padding-top: 100px;
-        padding-bottom: 180px;
+        padding-top: 50px;
+        padding-bottom: 130px;
 
         @include media(w1024) {
             padding-top: 50px;
@@ -25,7 +25,7 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        padding-top: 85px;
+        padding-top: 30px;
 
         @include media(w1024) {
             padding-top: 40px;
@@ -73,11 +73,7 @@
         position: absolute;
         bottom: 0;
         right: -10%;
-        width: 50%;
-
-        @include media(w1024) {
-            width: 40%;
-        }
+        width: 40%;
 
         @include media(w768) {
             display: none;

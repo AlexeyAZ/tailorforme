@@ -1,0 +1,43 @@
+.preloader {
+    transition: 0.5s ease;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+
+    &_active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+    }
+
+    &__window {
+        transform: translate(-50%,-50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    &__circle {
+        animation: preloader-circle-animate 2s linear infinite;
+        border-top: 3px solid red;
+        border-right: 3px solid white;
+        border-left: 3px solid white;
+        border-bottom: 3px solid white;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@keyframes preloader-circle-animate {
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

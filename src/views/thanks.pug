@@ -1,0 +1,21 @@
+extends templates/layout
+
+block vars
+    - var title = 'TAILOR for ME'
+
+block content
+    div.content
+        section.sec.intro.color-white.ta-center.thanks
+            div.video-container
+                video.video(poster="img/intro-bg.jpg" id="bgvid" playsinline autoplay muted loop)
+                    source(src="video/video.webm" type="video/webm")
+            include templates/header
+            div.container
+                p.heading.heading_s.thanks__heading.
+                    <span id="thanksName"></span><span id="thanksOur">наши</span> менеджеры<br> уже занимаются вашей заявкой
+                p.title.title_m.thanks__title.
+                    Мы свяжемся с вами в ближайшее время
+                p.title.title_s.thanks__subtitle.
+                    График работы: с 9 00 до 18 00. Поэтому, если вы оставили заявку<br> в нерабочее время, мы перезвоним вам на следующий день
+                a.btn-ellipse.btn-ellipse_bg_white.thanks__btn(href="/").
+                    Вернуться на сайт

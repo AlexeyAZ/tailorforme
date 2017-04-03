@@ -1,11 +1,25 @@
 .sec4 {
     background-color: $gray-bg;
-    padding-bottom: 100px;
+    background-image: url("../img/sec4-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    //background-position: right -60px center;
+    padding-top: 50px;
+    padding-bottom: 60px;
     position: relative;
     z-index: 1;
 
+    @include media(w1024) {
+        background-position: right center;
+    }
+
     @include media(w768) {
-        padding-bottom: 0;
+        padding-bottom: 50px;
+    }
+
+    @include media(w600) {
+        //background-position: right -300px top -30px;
     }
 
     &__container {
@@ -65,9 +79,14 @@
     }
 
     &__quote {
+        color: white;
         text-align: left;
         margin-bottom: 70px;
         max-width: 430px;
+
+        &:before {
+            background-color: white;
+        }
 
         @include media(w768) {
             margin-bottom: 40px;

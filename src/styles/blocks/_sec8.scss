@@ -117,6 +117,14 @@
 		@include media(w1366) {
 			margin-bottom: 50px;
 		}
+
+		@include media(w1024) {
+			margin-bottom: 30px;
+		}
+
+		@include media(w768) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__gallery {

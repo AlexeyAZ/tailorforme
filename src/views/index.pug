@@ -1,20 +1,22 @@
 extends templates/layout
 
 block vars
-    - var title = 'Tailor For Me'
+    - var title = 'TAILOR for ME'
 
 block content
-    div.modal-win
+    div#modal-win-time.modal-win
         div.modal-win__container
             div.modal-win__close
             p.modal-win__heading.
-                Записаться на снятие мерок
-            form.modal-win__form
+                Записаться на замер
+            form(method="POST")#sendFormTime.modal-win__form
                 label.sec9__form-label.modal-win__label
-                    |Дата
+                    span.
+                        Дата
                     input.sec9__form-input.modal-win__input.modal-win__input_date(type="text" name="date" readonly="true")
                 label.sec9__form-label.modal-win__label
-                    |Время
+                    span.
+                        Время
                     select.sec9__form-input.sec9__form-input_time.modal-win__input(type="" name="time")
                         option.sec9__form-option.
                             10:00-11:00
@@ -37,14 +39,31 @@ block content
                         option.sec9__form-option.
                             19:00-20:00
                 label.sec9__form-label.modal-win__label
-                    |Ваше имя
-                    input.sec9__form-input.modal-win__input(type="text" name="name")
+                    span.
+                        Телефон
+                    input.sec9__form-input.sec9__form-input_phone.modal-win__input(type="text" name="phone" required="")
                 label.sec9__form-label.modal-win__label
-                    |Телефон
-                    input.sec9__form-input.sec9__form-input_phone.modal-win__input(type="text" name="phone")
+                    span.
+                        Ваше имя
+                    input.sec9__form-input.modal-win__input(type="text" name="name" required="")
                 button.modal-win__form-btn.
                     Записаться
-
+    div#modal-win-call.modal-win
+        div.modal-win__container.modal-win__container_small
+            div.modal-win__close
+            p.modal-win__heading.
+                Заказать пошив
+            form(method="POST")#sendFormCall.modal-win__form
+                label.sec9__form-label.modal-win__label
+                    div.
+                        Телефон
+                    input.sec9__form-input.sec9__form-input_phone.modal-win__input(type="text" name="phone" required="")
+                label.sec9__form-label.modal-win__label
+                    div.
+                        Ваше имя
+                    input.sec9__form-input.modal-win__input(type="text" name="name" required="")
+                button.modal-win__form-btn.
+                    Заказать
     div.content
         section.sec.intro
             div.video-container
@@ -54,8 +73,10 @@ block content
             div.container.intro__container
                 p.heading.heading_xl.ta-center.color-white.intro__heading.
                     Индивидуальный пошив по вашим меркам
-                p.title.title_l.ta-center.color-white.
+                p.title.title_l.ta-center.color-white.intro__title.
                     Восхитительно другая одежда
+                a.btn-ellipse.btn-ellipse_bg_red.js-modal.intro__btn(href="" data-id="modal-win-call").
+                    Заказать индивидуальный пошив
                 div.intro__scroll-btn
                     img(src="img/svg/icon-mouse.svg", alt="")
         section.sec.sec2
@@ -66,7 +87,7 @@ block content
                             Идеальная<br> посадка<br> на любую<br> фигуру
                         div.quote.sec2__quote.
                             Для тех, кто предпочитает<br> настоящий комфорт<br> и индивидуальность
-                        a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                        a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="" data-id="modal-win-call").
                             Заказать индивидуальный пошив
                     div.col.col_2
                         div.sec2__gallery-wrap
@@ -92,28 +113,28 @@ block content
                 div.row.sec3__row
                     div.col.col_2
                         div.sec3__gallery
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/1.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/1 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/2.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/2 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/3.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/3 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/4.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/4 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/5.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/5 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/6.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/6 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/7.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/7 2.png", alt="")
-                            a.sec3__gallery-item.js-modal(href="")
+                            a.sec3__gallery-item.js-modal(href="" data-id="modal-win-call")
                                 img.sec3__gallery-img.sec3__gallery-img_main(src="img/slide3/8.png", alt="")
                                 img.sec3__gallery-img.sec3__gallery-img_hover(src="img/slide3/8 2.png", alt="")
 
@@ -122,13 +143,13 @@ block content
                             img.sec3__img(src="img/slide3-img.jpg", alt="")
         section.sec.sec4
             div.container.sec4__container
-                p.heading.heading_m.sec4__heading.
+                p.heading.heading_m.sec4__heading.color-white.
                     Снимите мерки<br> в студии или<br> пригласите<br> портного<br> к себе
                 div.quote.sec4__quote.
-                    Персональный подход к созданию<br> вашего неповторимого стиля
-                a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                    Персональный подход к созданию вашего неповторимого стиля
+                a.btn-ellipse.btn-ellipse_bg_red.js-modal(href="" data-id="modal-win-time").
                     Записаться на снятие мерок
-            div.sec4__img-container
+            //div.sec4__img-container
                 img.sec4__img(src="img/slide4-bg.png", alt="")
         section.sec.sec5
             div.container.sec5__container
@@ -518,7 +539,7 @@ block content
                     div.quote.sec5__quote
                         | Вы выбрали: 
                         span.sec5__issue-choise
-                    <a class="sec5__issue-btn btn-ellipse btn-ellipse_bg_red js-modal" href="">Заказать пошив</a>
+                    <a class="sec5__issue-btn btn-ellipse btn-ellipse_bg_red js-modal" href="" data-id="modal-win-call">Заказать пошив</a>
         section.sec.sec6
             div.sec6__top
                 div.container.sec6__container
@@ -531,7 +552,7 @@ block content
                     div.sec6__content
                         p.sec6__content-text.title.title_s.color-white.
                             Индивидуальный пошив происходит<br> под руководством квалифицированных портных
-                        a.sec6__content-btn.btn-ellipse.btn-ellipse_bg_white.js-modal(href="").
+                        a.sec6__content-btn.btn-ellipse.btn-ellipse_bg_white.js-modal(href="" data-id="modal-win-call").
                             Заказать индивидуальный пошив
             div.container.sec6__img-container
                 img.sec6__img(src="img/slide6-img1.png", alt="")
@@ -546,7 +567,7 @@ block content
                         Небольшие детали для больших изменений
                     p.sec7__text.title.title_s.
                         Наш модельер поможет подобрать вам варианты стилистических решений
-                    a.sec7__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                    a.sec7__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="" data-id="modal-win-time").
                         Пригласить модельера
         section.sec.sec8
             div.sec8__bg
@@ -556,7 +577,7 @@ block content
                             Посмотрите, насколько элегантно и стильно выглядят костюмы TAILOR.ME 
                         p.sec8__title.title.title_s.
                             В повседневной жизни
-                        a.sec8__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="").
+                        a.sec8__btn.btn-ellipse.btn-ellipse_bg_red.js-modal(href="" data-id="modal-win-call").
                             Заказать индивидуальный пошив
                         div.sec8__gallery-info
                             div.sec8__gallery-position
@@ -610,46 +631,47 @@ block content
                                 p.sec8__gallery-text.
                                     Владелец компании «Франчайзинг 5»
         section.sec.sec9
-            div.container.sec9__container
+            div#form-open.container.sec9__container
                 p.sec9__heading.heading.heading_s.color-white.
                     Пригласите портного или запишитесь на замер в студию
                 p.sec9__title.title.title_l.color-white.
                     Выберите дату и удобное для вас время
-                form.sec9__form
-                    div.sec9__form-item.sec9__form-item_date
-                        label.sec9__form-label
-                            |Дата
-                            input.sec9__form-input.sec9__form-input_date(type="text" name="date" readonly="true")
-                        label.sec9__form-label
-                            |Время
-                            select.sec9__form-input.sec9__form-input_time(type="" name="time")
-                                option.sec9__form-option.
-                                    10:00-11:00
-                                option.sec9__form-option.
-                                    11:00-12:00
-                                option.sec9__form-option.
-                                    12:00-13:00
-                                option.sec9__form-option.
-                                    13:00-14:00
-                                option.sec9__form-option.
-                                    14:00-15:00
-                                option.sec9__form-option.
-                                    15:00-16:00
-                                option.sec9__form-option.
-                                    16:00-17:00
-                                option.sec9__form-option.
-                                    17:00-18:00
-                                option.sec9__form-option.
-                                    18:00-19:00
-                                option.sec9__form-option.
-                                    19:00-20:00
-                    div.sec9__form-item.sec9__form-item_info
-                        label.sec9__form-label
-                            |Ваше имя
-                            input.sec9__form-input(type="text" name="name")
-                        label.sec9__form-label
-                            |Телефон
-                            input.sec9__form-input.sec9__form-input_phone(type="text" name="phone")
-                div.sec9__btn-container
-                    button.sec9__btn.
-                        Записаться на снятие мерок
+                form#formDateOpen(method="POST")
+                    div.sec9__form
+                        div.sec9__form-item.sec9__form-item_date
+                            label.sec9__form-label
+                                |Дата
+                                input.sec9__form-input.sec9__form-input_date(type="text" name="date" readonly="true")
+                            label.sec9__form-label
+                                |Время
+                                select.sec9__form-input.sec9__form-input_time(type="" name="time")
+                                    option.sec9__form-option.
+                                        10:00-11:00
+                                    option.sec9__form-option.
+                                        11:00-12:00
+                                    option.sec9__form-option.
+                                        12:00-13:00
+                                    option.sec9__form-option.
+                                        13:00-14:00
+                                    option.sec9__form-option.
+                                        14:00-15:00
+                                    option.sec9__form-option.
+                                        15:00-16:00
+                                    option.sec9__form-option.
+                                        16:00-17:00
+                                    option.sec9__form-option.
+                                        17:00-18:00
+                                    option.sec9__form-option.
+                                        18:00-19:00
+                                    option.sec9__form-option.
+                                        19:00-20:00
+                        div.sec9__form-item.sec9__form-item_info
+                            label.sec9__form-label
+                                |Телефон
+                                input.sec9__form-input.sec9__form-input_phone(type="text" name="phone" required="")
+                            label.sec9__form-label
+                                |Ваше имя
+                                input.sec9__form-input(type="text" name="name" required="")
+                    div.sec9__btn-container
+                        button.sec9__btn.
+                            Записаться на снятие мерок

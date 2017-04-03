@@ -15,6 +15,7 @@ var plugins = {
     'src/scripts/agmodal.jquery.min.js',
     'bower_components/air-datepicker/dist/js/datepicker.min.js',
     'bower_components/jQuery-viewport-checker/dist/jquery.viewportchecker.min.js',
+    'bower_components/mobile-detect/mobile-detect.min.js',
   ],
   
   css: [
@@ -133,6 +134,11 @@ gulp.task('video', function () {
         .pipe(gulp.dest(properties.folders.build + '/video'))
 });
 
+gulp.task('doc', function () {
+    gulp.src(properties.folders.src + '/doc/**/*.*')
+        .pipe(gulp.dest(properties.folders.build + '/doc'))
+});
+
 gulp.task('font', function () {
     gulp.src(properties.folders.src + '/fonts/**/*.*')
         .pipe(gulp.dest(properties.folders.build + '/fonts'))
@@ -158,6 +164,7 @@ gulp.task('build', [
     'vendor',
     'image',
     'video',
+    'doc',
     'font',
     'json',
     'svgSpriteBuild'
@@ -181,6 +188,9 @@ gulp.task('watch', function() {
   });
   watch(properties.folders.src + '/video/**/*.*', function() {
       gulp.start('video');
+  });
+    watch(properties.folders.src + '/doc/**/*.*', function() {
+      gulp.start('doc');
   });
   watch(properties.folders.src + '/font/**/*.*', function() {
       gulp.start('font');

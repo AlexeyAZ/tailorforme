@@ -1,6 +1,16 @@
 .sec5 {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 70px;
+
+    @include media(w1024) {
+        //padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    @include media(w768) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 
     &__switch-panel {
         border-bottom: 2px solid #cecece;

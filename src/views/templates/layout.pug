@@ -10,13 +10,44 @@ html
         meta(name="description", content="")
         meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui")
         title #{title}
-        link(href="images/favicon.ico" rel="shortcut icon" type="image/x-icon")
+        link(href="img/favicon.ico" rel="shortcut icon" type="image/x-icon")
         link(rel="stylesheet", href="styles/vendor.css")
         link(rel="stylesheet", href="styles/main.css")
         block scripts
     body
         include svg
+        include preloader
         block content
         include footer
         script(src="scripts/vendor.js")
         script(src="scripts/app.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/webshim/1.16.0/dev/polyfiller.js")
+        <!--Yandex.Metrika counter-->
+        script(type="text/javascript").
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter43611769 = new Ya.Metrika({
+                            id:43611769,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        noscript.
+            <div><img src="https://mc.yandex.ru/watch/43611769" style="position:absolute; left:-9999px;" alt="" /></div>
+        <!--/Yandex.Metrika counter-->

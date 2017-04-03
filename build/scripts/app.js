@@ -1,7 +1,39 @@
 $(function () {
 
+    // webshim.activeLang('en');
+    // webshims.polyfill('forms');
+    // webshims.cfg.no$Switch = true;
+
+    webshim.setOptions('forms', {
+        //set lazyCustomMessages to true
+        lazyCustomMessages: true,
+        //show custom styleable validation bubble
+        replaceValidationUI: true
+    });
+
+    //start polyfilling
+    webshim.polyfill('forms');
+
     var body = $("body");
     var sec2Gallery = $(".sec2__gallery");
+
+    function phoneLink() {
+        var md = new MobileDetect(window.navigator.userAgent);
+        var phoneLink = $(".phone-link");
+
+        if (md.mobile()) {
+            phoneLink.attr("href", "tel:" + $(".phone-link").data("phone"));
+            phoneLink.removeClass("js-modal");
+            phoneLink.attr("data-id", "");
+            console.log("mobile");
+        } else {
+            phoneLink.attr("href", "");
+            phoneLink.addClass("js-modal");
+            phoneLink.attr("data-id", "modal-win-call");
+            console.log("pc");
+        }
+    }
+    phoneLink();
 
     sec2Gallery.on('init', function (event, slick) {
         $(".sec2__gallery-number-all").text(slick.slideCount);
@@ -203,21 +235,22 @@ $(function () {
 
     body.on("click", ".js-modal", function (e) {
         e.preventDefault();
-        var self = $(this);
-        var selfText = self.text();
 
-        if (self.hasClass("sec3__gallery-item")) {
-            $(".modal-win__heading").text("Записаться на замер");
-        } else {
-            $(".modal-win__heading").text(selfText);
+        if (!$(".thanks").length) {
+            var self = $(this);
+            var selfId = self.data("id");
+            var selfText = self.text();
+
+            $("#" + selfId).addClass("modal-win_show");
+            $("html").addClass("modal-win-show");
+            body.css("overflow-y", "scroll");
         }
-
-        body.addClass("modal-win-show");
     });
 
     body.on("click", function (e) {
         if ($(e.target).hasClass("modal-win") && !$(e.target).hasClass("js-modal") && !$(e.target).hasClass("modal-win__form") || $(e.target).hasClass("modal-win__close")) {
             $(".modal-win-show").removeClass("modal-win-show");
+            $(".modal-win_show").removeClass("modal-win_show");
         }
     });
 
@@ -229,6 +262,112 @@ $(function () {
         classToAdd: 'visible',
         classToAddForFullView: 'quote_animate'
     });
+
+    // $(".modal-win__form").submit(function(e) {
+    //     e.preventDefault();
+
+    //     var self = $(this);
+    //     //window.location = "thanks.html";
+
+    //     var name = self.find("input[name=name]").val();
+    //     //localStorage.setItem("tailorname", name);
+    //     body.addClass("modal-win-show, disable-links");
+
+    //     if (name) {
+    //         $("#thanksName").text(name + ", ");
+    //     } else {
+    //         $("#thanksName").text("");
+    //     }
+
+    //     $("#thanksWindow").show();
+    //     $(".modal-win_show").removeClass("modal-win_show");
+    // });
+
+    $("#modal-win-time, #modal-win-call").submit(function (e) {
+        //e.preventDefault();
+        window.location = "thanks.html";
+
+        var self = $(this);
+
+        var name = self.find("input[name=name]").val();
+        localStorage.setItem("tailorname", name);
+        body.addClass("modal-win-show");
+
+        if (name) {
+            $("#thanksName").text(name + ", ");
+        } else {
+            $("#thanksName").text("");
+            $("#thanksOur").text("Наши");
+        }
+    });
+
+    $("#form-open").submit(function (e) {
+        //e.preventDefault();
+        window.location = "thanks.html";
+
+        var self = $(this);
+
+        var name = self.find("input[name=name]").val();
+        localStorage.setItem("tailorname", name);
+
+        if (name) {
+            $("#thanksName").text(name + ", ");
+        } else {
+            $("#thanksName").text("");
+            $("#thanksOur").text("Наши");
+        }
+    });
+
+    // $("#modal-win-call").submit(function(e) {
+    //     //e.preventDefault();
+
+    //     var self = $(this);
+    //     window.location = "thanks.html";
+
+    //     var name = self.find("input[name=name]").val();
+    //     localStorage.setItem("tailorname", name);
+    //     body.addClass("modal-win-show");
+
+    //     if (name) {
+    //         $("#thanksName").text(name + ", ");
+    //     } else {
+    //         $("#thanksName").text("");
+    //     }
+    // });
+
+
+    // $(".modal-win__form-btn").on("click", function(e) {
+    //     e.preventDefault();
+
+    //     var self = $(this).closest("form");
+    //     window.location = "thanks.html";
+
+    //     var name = self.find("input[name=name]").val();
+    //     localStorage.setItem("tailorname", name);
+    //     body.addClass("modal-win-show");
+
+    //     if (name) {
+    //         $("#thanksName").text(name + ", ");
+    //     } else {
+    //         $("#thanksName").text("");
+    //     }
+    // });
+
+
+    // body.on("click", ".js-back-site", function(e) {
+    //     e.preventDefault();
+    //     $("#thanksWindow").hide();
+    //     body.removeClass("modal-win-show");
+    //     body.removeClass("disable-links");
+    // });
+
+
+    if ($(".thanks").length) {
+
+        if (localStorage.getItem("tailorname")) {
+            $("#thanksName").text(localStorage.getItem("tailorname") + ", ");
+        } else {}
+    };
 
     $(window).on("resize", function () {
         setSec8Size();
@@ -245,6 +384,7 @@ $(function () {
     });
 
     $(window).on("load", function () {
+        $(".preloader_active").removeClass("preloader_active");
         setSec8Size();
     });
 });

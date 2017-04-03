@@ -1,8 +1,9 @@
 .modal-win {
-  transition: $trans;
+  //transition: $trans;
   background-color: rgba(56,56,56,0.8);
   opacity: 0;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -17,14 +18,29 @@
   }
 
   &__container {
-	transform: translate(-50%,-40%);
+	transform: translate(-50%,-50%);
 	background-color: white;
 	border-radius: 10px;
+	//opacity: 0;
 	padding: 40px 50px 60px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 380px;
+	width: 500px;
+
+	  &_small {
+		width: 380px;
+
+		.modal-win__label {
+			flex-direction: column;
+			align-items: flex-start;
+			width: 100%;
+		}
+
+		.modal-win__input {
+			width: 100%;
+		}
+	  }
 
 	@include media(w1024) {
 		transform: translate(-50%,0);
@@ -35,6 +51,11 @@
 
 	@include media(w768) {
 		padding: 30px 20px 40px;
+	}
+
+	@include media(w600) {
+		padding: 30px 20px 20px;
+		width: 380px;
 	}
 
 	@media screen and (max-width:400px) {
@@ -77,18 +98,53 @@
 	  line-height: 1.2;
 	  text-align: center;
 	  margin-bottom: 30px;
+
+	  @include media(w768) {
+		font-size: 26px;
+	}
+
+	  @include media(w600) {
+		margin-bottom: 10px;
+	}
   }
 
   &__form {
+	  text-align: center;
   }
 
   &__label {
-	  color: black;
+		color: black;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+		width: 100%;
+
+	span {
+			width: 35%;
+
+			@include media(w600) {
+				width: 100%;
+			}
+		}
+
+		@include media(w600) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-bottom: 5px;
+			width: 100%;
+		}
   }
 
   &__input {
 	  border-color: black;
 	  color: black;
+		width: 63%;
+
+		@include media(w600) {
+			margin-top: 0;
+			width: 100%;
+		}
 
 	  .jq-selectbox__trigger-arrow {
 		  border-color: black;
@@ -115,19 +171,31 @@
 	  font-size: 24px;
 	  margin-top: 20px;
 	  height: 62px;
-	  width: 95%;
+	  width: 100%;
 
 	  &:hover {
 		background-color: #ee343b;
+	}
+
+	@include media(w600) {
+		border-radius: 24px;
+		height: 48px;
 	}
   }
 }
 
 .modal-win-show {
 	overflow: hidden;
-	
-	.modal-win {
-		opacity: 1;
-    	visibility: visible;
+}
+
+.modal-win_show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.disable-links {
+
+	.header, .footer {
+		pointer-events: none;
 	}
 }
